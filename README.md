@@ -19,6 +19,10 @@ env GOOS="linux" GOARCH="amd64" go build                    // russell bin
 
 #### Usage
 ```bash
+# Export the DOCKER_API_VERSION to the API Version supported in the Machine
+export DOCKER_API_VERSION=$(docker version --format '{{.Server.APIVersion}}');
+echo $DOCKER_API_VERSION;
+
 ./russell -n portainer                                      // prints compose file in terminal(stdout)
 ./russell -n portainer -o portainer.yml                     // saves compose file to portainer.yml file in the same directory
 ```
